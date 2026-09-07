@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#0b5a41" />
+  <title>Hướng dẫn học bổng du học Trung Quốc (sinh viên Việt Nam) · 2026/2027</title>
+  <style>
+    :root {
+      --bg: #f3f6f4;
+      --card: #ffffff;
+      --ink: #1a2420;
+      --muted: #5a6b63;
+      --line: #d7e2dc;
+      --accent: #0d6b4c;
+      --accent-soft: #e7f5ef;
+      --warn: #8a4b12;
+      --warn-bg: #fff6eb;
+      --danger: #8b2e2e;
+      --ok: #1f6b3a;
+      --shadow: 0 10px 30px rgba(26, 36, 32, 0.06);
+      --radius: 14px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+               "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #d9efe4 0%, transparent 55%),
+        radial-gradient(900px 400px at 100% 0%, #e8f0ff 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-tap-highlight-color: rgba(13, 107, 76, 0.12);
+      padding-top: var(--safe-top);
+      padding-right: var(--safe-right);
+      padding-bottom: var(--safe-bottom);
+      padding-left: var(--safe-left);
+    }
+    a { color: var(--accent); }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    header.hero {
+      background: linear-gradient(135deg, #0b5a41 0%, #1a7a58 45%, #2a6f8a 100%);
+      color: #fff;
+      border-radius: 18px;
+      padding: 28px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    header.hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 5.2vw, 2.05rem);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    header.hero p {
+      margin: 0;
+      opacity: 0.96;
+      max-width: 820px;
+      font-size: 0.95rem;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .chip {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      line-height: 1.3;
+    }
+    .lang-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .lang-bar a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+    .lang-bar a.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .notice {
+      background: var(--warn-bg);
+      border: 1px solid #f0d4ad;
+      color: var(--warn);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+    }
+    .notice a { color: var(--warn); word-break: break-word; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      overflow: hidden;
+    }
+    .card h2, .card h3 { margin: 0 0 10px; }
+    .card h2 { font-size: 1.12rem; color: var(--accent); line-height: 1.35; }
+    .card h3 { font-size: 1.02rem; }
+    .span-12 { grid-column: span 12; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-8 { grid-column: span 8; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .kpi {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 12px;
+      border: 1px solid #cfe6da;
+    }
+    .kpi .n { font-size: 1.28rem; font-weight: 700; color: var(--accent); word-break: break-word; }
+    .kpi .l { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f0f7f3;
+      color: #0d4f3b;
+      position: sticky;
+      top: 0;
+      font-weight: 650;
+      z-index: 1;
+    }
+    .table-wrap {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      max-height: 560px;
+      overscroll-behavior: contain;
+    }
+    .table-wrap.no-max { max-height: none; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-high { background: #fde8e8; color: var(--danger); }
+    .tag-mid { background: #fff3d9; color: #8a5a00; }
+    .tag-low { background: #e7f7ec; color: var(--ok); }
+    .tag-full { background: #e7f5ef; color: var(--accent); }
+    .tag-part { background: #eef2ff; color: #3b4a9c; }
+    .proscons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .pros, .cons {
+      border-radius: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+    }
+    .pros { background: #f3faf6; }
+    .cons { background: #fff8f8; }
+    .pros h4 { margin: 0 0 8px; color: var(--ok); }
+    .cons h4 { margin: 0 0 8px; color: var(--danger); }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 5px 0; }
+    .muted { color: var(--muted); font-size: 0.88rem; }
+    .links a { color: var(--accent); word-break: break-all; }
+    footer {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      text-align: center;
+      padding-bottom: 8px;
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      background: #f4faf7;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+    .uni-name { font-weight: 650; }
+    .city { color: var(--muted); font-size: 0.86rem; }
+    a.apply-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed #9bc7b4;
+      word-break: break-word;
+      display: inline;
+    }
+    a.apply-link:hover { border-bottom-style: solid; }
+    code {
+      font-size: 0.86em;
+      background: #eef5f1;
+      padding: 1px 5px;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+    .hint-scroll {
+      display: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin: 0 0 8px;
+    }
+
+    /* iPhone / mobile */
+    @media (max-width: 900px) {
+      .span-6, .span-4, .span-8 { grid-column: span 12; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .proscons { grid-template-columns: 1fr; }
+      .wrap { padding: 14px 12px 40px; }
+      header.hero {
+        padding: 22px 16px;
+        border-radius: 16px;
+      }
+      .card { padding: 14px; border-radius: 12px; }
+      .kpis { grid-template-columns: 1fr; }
+      .hint-scroll { display: block; }
+      .table-wrap { max-height: none; border: none; }
+      .table-wrap table,
+      .table-wrap thead,
+      .table-wrap tbody,
+      .table-wrap th,
+      .table-wrap td,
+      .table-wrap tr {
+        display: block;
+        width: 100%;
+      }
+      .table-wrap thead { display: none; }
+      .table-wrap tr {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        padding: 8px 10px 4px;
+        box-shadow: 0 4px 14px rgba(26, 36, 32, 0.04);
+      }
+      .table-wrap td {
+        border: none;
+        border-bottom: 1px dashed #e5eee9;
+        padding: 8px 0;
+        font-size: 0.9rem;
+      }
+      .table-wrap td:last-child { border-bottom: none; }
+      .table-wrap td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin-bottom: 3px;
+      }
+      /* simple 2-col tables stay readable as cards too */
+      .card > table thead { display: none; }
+      .card > table, .card > table tbody, .card > table tr, .card > table td {
+        display: block;
+        width: 100%;
+      }
+      .card > table tr {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        padding: 8px 10px 4px;
+      }
+      .card > table td {
+        border: none;
+        border-bottom: 1px dashed #e5eee9;
+        padding: 8px 0;
+      }
+      .card > table td:last-child { border-bottom: none; }
+      .card > table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 3px;
+      }
+    }
+    @media (max-width: 390px) {
+      body { font-size: 15px; }
+      .toc a { width: 100%; justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="lang-bar">
+      <a class="active" href="Huong_dan_hoc_bong_du_hoc_Trung_Quoc_2026_vi.html">Tiếng Việt</a>
+      <a href="中国留学奖学金指南_越南学生_2026.html">中文</a>
+    </div>
+
+    <header class="hero">
+      <h1>Hướng dẫn học bổng du học Trung Quốc<br>dành cho sinh viên Việt Nam</h1>
+      <p>
+        Tổng hợp theo thông tin công khai năm học 2026/2027: so sánh loại học bổng,
+        trường liên quan tới sinh viên Việt Nam, lịch nộp hồ sơ và phân tích ưu–nhược điểm.
+        Có khoảng 270–280 trường tiếp nhận học bổng Chính phủ Trung Quốc (CSC).
+        Tài liệu này không liệt kê hết mọi học bổng cấp trường, mà tập trung vào khung quyết định thực tế.
+      </p>
+      <div class="meta">
+        <span class="chip">Năm dữ liệu: 2026/2027</span>
+        <span class="chip">Tham chiếu: 10/2025 – 07/2026</span>
+        <span class="chip">Đối tượng: công dân Việt Nam</span>
+        <span class="chip">Cổng chính: campuschina.org</span>
+      </div>
+    </header>
+
+    <div class="notice">
+      <strong>Lưu ý quan trọng:</strong>
+      Chỉ tiêu, hạn nộp và mức hỗ trợ thay đổi hằng năm theo Bộ Giáo dục / CSC, sở giáo dục tỉnh và từng trường.
+      Trước khi nộp, hãy đối chiếu:
+      <a href="https://www.campuschina.org" target="_blank" rel="noopener">Campus China</a>,
+      <a href="https://vn.china-embassy.gov.cn" target="_blank" rel="noopener">Đại sứ quán Trung Quốc tại Việt Nam</a>,
+      thông báo Bộ GD&ĐT Việt Nam (MOET) và website quốc tế của trường.
+      Từ năm 2026, ứng viên đại học thường cần điểm <strong>CSCA</strong>.
+    </div>
+
+    <div class="card span-12" style="margin-bottom:14px;">
+      <h2>Mục lục</h2>
+      <div class="toc">
+        <a href="#kpi">Số liệu chính</a>
+        <a href="#types">Loại học bổng</a>
+        <a href="#channels">Kênh nộp hồ sơ</a>
+        <a href="#unis">Danh sách trường + link</a>
+        <a href="#timeline">Lịch trình</a>
+        <a href="#proscons">Ưu – nhược điểm</a>
+        <a href="#advice">Chiến lược</a>
+        <a href="#sources">Nguồn chính thức</a>
+      </div>
+    </div>
+
+    <div class="grid" id="kpi">
+      <div class="card span-12">
+        <h2>1. Số liệu chính (mùa tuyển 2026)</h2>
+        <div class="kpis">
+          <div class="kpi"><div class="n">~270–280</div><div class="l">Số trường tiếp nhận CSC (ước tính)</div></div>
+          <div class="kpi"><div class="n">¥2.500–3.500</div><div class="l">Sinh hoạt phí CSC đầy đủ / tháng</div></div>
+          <div class="kpi"><div class="n">7042</div><div class="l">Mã cơ quan loại A (ĐSQ tại VN)</div></div>
+          <div class="kpi"><div class="n">10/02/2026</div><div class="l">Hạn nộp online một số dự án ĐSQ (tham khảo)</div></div>
+        </div>
+        <p class="muted" style="margin:12px 0 0;">
+          CSC đầy đủ thường gồm: học phí, ký túc xá (hoặc trợ cấp), sinh hoạt phí, bảo hiểm y tế.
+          Học bổng một phần có thể chỉ miễn học phí — cần đọc kỹ điều khoản.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" id="types">
+      <div class="card span-12">
+        <h2>2. So sánh loại học bổng</h2>
+        <p class="hint-scroll">Trên iPhone: mỗi dòng hiện dạng thẻ, vuốt nhẹ nếu cần.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Loại</th>
+                <th>Mức hỗ trợ</th>
+                <th>Cạnh tranh</th>
+                <th>Đối tượng</th>
+                <th>Ưu điểm</th>
+                <th>Nhược điểm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Loại"><strong>CSC loại A</strong><br><span class="muted">Song phương / ĐSQ / cơ quan cử đi</span></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-full">Đầy đủ hoặc một phần</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-high">Rất cao</span></td>
+                <td data-label="Đối tượng">ĐH / ThS / TS (tùy dự án)</td>
+                <td data-label="Ưu điểm">Uy tín, phạm vi rộng, chuẩn rõ</td>
+                <td data-label="Nhược điểm">Chỉ tiêu ít; hồ sơ nhiều; một số chỉ ThS–TS hoặc một phần</td>
+              </tr>
+              <tr>
+                <td data-label="Loại"><strong>CSC loại B</strong><br><span class="muted">Trường tự tuyển (High-level…)</span></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-full">Thường đầy đủ</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-high">Cao</span></td>
+                <td data-label="Đối tượng">Chủ yếu ThS / TS</td>
+                <td data-label="Ưu điểm">Nộp trực tiếp nhiều trường; pre-admission quan trọng</td>
+                <td data-label="Nhược điểm">Trường top rất khó; cần nộp kép CSC + trường</td>
+              </tr>
+              <tr>
+                <td data-label="Loại"><strong>Silk Road / Belt &amp; Road</strong></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-full">Thường đầy đủ</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-mid">Trung–cao</span></td>
+                <td data-label="Đối tượng">Việt Nam và nước BRI</td>
+                <td data-label="Ưu điểm">Ưu tiên theo quốc tịch; VN thường có trong danh sách</td>
+                <td data-label="Nhược điểm">Chuyên ngành / bậc học hạn chế; hạn nộp phân tán</td>
+              </tr>
+              <tr>
+                <td data-label="Loại"><strong>ASEAN / Học bổng Quảng Tây</strong></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-full">Đầy đủ hoặc gần đầy đủ</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-mid">Trung bình</span></td>
+                <td data-label="Đối tượng">Công dân ASEAN (gồm VN)</td>
+                <td data-label="Ưu điểm">Thân thiện với VN; chi phí sống thấp; cộng đồng lớn</td>
+                <td data-label="Nhược điểm">Nhiều trường ở Quảng Tây; xếp hạng thấp hơn Bắc–Thượng</td>
+              </tr>
+              <tr>
+                <td data-label="Loại"><strong>Học bổng cấp tỉnh</strong><br><span class="muted">Quảng Đông / Phúc Kiến / Liêu Ninh / Vân Nam…</span></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-part">Một phần → đầy đủ</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-mid">Trung bình</span></td>
+                <td data-label="Đối tượng">ĐH / ThS / TS</td>
+                <td data-label="Ưu điểm">Dễ hơn CSC; dùng làm phương án dự phòng</td>
+                <td data-label="Nhược điểm">Mức tiền khác nhau; đôi khi chỉ SV cũ / xét năm</td>
+              </tr>
+              <tr>
+                <td data-label="Loại"><strong>Học bổng cấp trường</strong></td>
+                <td data-label="Mức hỗ trợ"><span class="tag tag-part">Thường giảm học phí</span></td>
+                <td data-label="Cạnh tranh"><span class="tag tag-low">Trung–thấp</span></td>
+                <td data-label="Đối tượng">Mọi bậc</td>
+                <td data-label="Ưu điểm">Ngưỡng thấp hơn; có thể “nhập học rồi xin”</td>
+                <td data-label="Nhược điểm">Ít khi có sinh hoạt phí; thay đổi theo năm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="channels">
+      <div class="card span-6">
+        <h2>3. Kênh nộp hồ sơ cho sinh viên Việt Nam</h2>
+        <table>
+          <thead>
+            <tr><th>Kênh</th><th>Điểm chính (2026/2027)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Kênh"><strong>Đại sứ quán TQ tại Việt Nam</strong></td>
+              <td data-label="Điểm chính">
+                Loại A, mã <strong>7042</strong>.<br>
+                Một số dự án công bố: ThS/TS, cần giấy <strong>pre-admission</strong>; hỗ trợ <strong>miễn học phí</strong> (KTX/sinh hoạt/bảo hiểm tự túc).<br>
+                Hạn online tham khảo: <strong>10/02/2026</strong>; hồ sơ giấy khoảng trước <strong>15/02</strong>.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Kênh"><strong>Bộ GD&amp;ĐT Việt Nam (MOET)</strong></td>
+              <td data-label="Điểm chính">
+                Học bổng theo hiệp định / cử đi. Thường nộp đồng thời
+                <code>tuyensinh.vied.vn</code> và <code>campuschina.org</code>.
+                Thời hạn thường sớm hơn kênh ĐSQ — xem công văn năm đó.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Kênh"><strong>Nộp trực tiếp trường</strong><br><span class="muted">CSC B / Silk Road / ASEAN</span></td>
+              <td data-label="Điểm chính">
+                Nộp kép: hệ thống trường + CSC (nếu cần).
+                Hạn thường <strong>tháng 3–5</strong>. Có thể nộp song song 2–3 trường.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card span-6">
+        <h2>Mức CSC đầy đủ (tham khảo)</h2>
+        <table>
+          <thead>
+            <tr><th>Hạng mục</th><th>Mức (Nhân dân tệ)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Hạng mục">Học phí</td><td data-label="Mức">Miễn 100%</td></tr>
+            <tr><td data-label="Hạng mục">Ký túc xá</td><td data-label="Mức">Miễn phí hoặc trợ cấp (ThS ~700/tháng, TS ~1000/tháng)</td></tr>
+            <tr><td data-label="Hạng mục">Sinh hoạt phí ĐH</td><td data-label="Mức">2.500 / tháng</td></tr>
+            <tr><td data-label="Hạng mục">ThS / bồi dưỡng thường</td><td data-label="Mức">3.000 / tháng</td></tr>
+            <tr><td data-label="Hạng mục">TS / bồi dưỡng cao cấp</td><td data-label="Mức">3.500 / tháng</td></tr>
+            <tr><td data-label="Hạng mục">Bảo hiểm</td><td data-label="Mức">~800 / người·năm</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">Lưu ý: dự án “một phần” của ĐSQ có thể chỉ miễn học phí.</p>
+        <h3 style="margin-top:14px;">Ngôn ngữ &amp; kỳ thi</h3>
+        <ul>
+          <li>Học bằng tiếng Trung (ThS/TS): thường HSK 4+</li>
+          <li>Đại học tiếng Trung: thường HSK 3–5 (theo trường)</li>
+          <li>Học bằng tiếng Anh: IELTS/TOEFL theo yêu cầu trường</li>
+          <li>Đại học: CSCA (<a href="https://www.csca.cn" target="_blank" rel="noopener">www.csca.cn</a>); nhập học 09/2026 thường thi 21/12/2025 hoặc 25/01/2026</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid" id="unis">
+      <div class="card span-12">
+        <h2>4. Trường liên quan + link đăng ký</h2>
+        <p class="muted">
+          Khi xin CSC thường phải đăng nhập thêm
+          <a class="apply-link" href="https://studyinchina.csc.edu.cn" target="_blank" rel="noopener">hệ thống CSC</a>
+          (loại A mã 7042 / loại B điền mã trường). Link lấy theo thông báo năm hiện hành.
+        </p>
+        <p class="hint-scroll">Trên iPhone: mỗi trường hiện dạng thẻ, bấm link để mở Safari.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Trường</th>
+                <th>Thành phố</th>
+                <th>Học bổng liên quan</th>
+                <th>Link đăng ký</th>
+                <th>Trang tuyển sinh</th>
+                <th>Ưu / nhược</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Quảng Tây (广西大学)</td>
+                <td class="city" data-label="Thành phố">Nam Ninh</td>
+                <td data-label="Học bổng">CSC Silk Road, ASEAN, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://gxu.at0086.cn/StuApplication/Login.aspx" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://gjxy.gxu.edu.cn/" target="_blank" rel="noopener">Trung tâm lưu học sinh</a></td>
+                <td data-label="Ưu / nhược">Chi phí thấp, cộng đồng VN lớn / danh tiếng thấp hơn top</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Y Quảng Tây (广西医科大学)</td>
+                <td class="city" data-label="Thành phố">Nam Ninh</td>
+                <td data-label="Học bổng">Học bổng ASEAN tỉnh Quảng Tây</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://gxmu.at0086.cn/StuApplication/Login.aspx" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://gjy.gxmu.edu.cn/cn/" target="_blank" rel="noopener">Viện Giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Hỗ trợ khá đầy đủ, ngành y rõ / thời gian học dài</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Khoa học kỹ thuật Quế Lâm</td>
+                <td class="city" data-label="Thành phố">Quế Lâm</td>
+                <td data-label="Học bổng">Học bổng ASEAN Bộ GD–Quảng Tây</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://cie.glut.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://gj.glut.edu.cn/" target="_blank" rel="noopener">Vụ hợp tác quốc tế</a></td>
+                <td data-label="Ưu / nhược">Ưu tiên ASEAN / lựa chọn ngành–thành phố hạn chế</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Vân Nam (云南大学)</td>
+                <td class="city" data-label="Thành phố">Côn Minh</td>
+                <td data-label="Học bổng">CSC High-level Postgraduate…</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://ynu.at0086.cn/StuApplication/Login.aspx" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="http://www.iep.ynu.edu.cn/" target="_blank" rel="noopener">Hợp tác quốc tế</a></td>
+                <td data-label="Ưu / nhược">Gần Đông Nam Á / kỹ thuật đỉnh không mạnh bằng Hoa Đông</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Hoa Kiều (华侨大学)</td>
+                <td class="city" data-label="Thành phố">Tuyền Châu / Hạ Môn</td>
+                <td data-label="Học bổng">CSC Silk Road (có Việt Nam)</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://admissions.hqu.edu.cn/" target="_blank" rel="noopener">Đăng ký sinh viên nước ngoài</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://zsc.hqu.edu.cn/" target="_blank" rel="noopener">Cổng tuyển sinh</a></td>
+                <td data-label="Ưu / nhược">Lộ trình Silk Road rõ / cần HSK, CSCA</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Ký Nam (暨南大学)</td>
+                <td class="city" data-label="Thành phố">Quảng Châu</td>
+                <td data-label="Học bổng">CSC Silk Road (có Việt Nam)</td>
+                <td data-label="Đăng ký">
+                  <a class="apply-link" href="https://hwy.jnu.edu.cn/" target="_blank" rel="noopener">Học viện Hoa văn</a>
+                  ·
+                  <a class="apply-link" href="https://lxlz.jnu.edu.cn/" target="_blank" rel="noopener">Liên tuyển ĐH</a>
+                </td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://zsb.jnu.edu.cn/" target="_blank" rel="noopener">Phòng tuyển sinh</a></td>
+                <td data-label="Ưu / nhược">Vị trí Đại Vịnh / chi phí sống cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Nam Khai (南开大学)</td>
+                <td class="city" data-label="Thành phố">Thiên Tân</td>
+                <td data-label="Học bổng">CSC Silk Road (có Việt Nam)</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://nankai.at0086.cn/StuApplication/Login.aspx" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://sie.nankai.edu.cn/" target="_blank" rel="noopener">Viện Giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Thương hiệu mạnh / yêu cầu ngôn ngữ cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Nam Xương (南昌大学)</td>
+                <td class="city" data-label="Thành phố">Nam Xương</td>
+                <td data-label="Học bổng">CSC Silk Road – tiếng Trung</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="http://apply.ncu.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://iec.ncu.edu.cn/" target="_blank" rel="noopener">Viện Giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Phù hợp ngành tiếng Trung / cửa sổ nộp ngắn</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Hạ Môn (厦门大学)</td>
+                <td class="city" data-label="Thành phố">Hạ Môn</td>
+                <td data-label="Học bổng">Học bổng tỉnh Phúc Kiến, CSC</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://application.xmu.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://admissions.xmu.edu.cn/" target="_blank" rel="noopener">Tuyển sinh quốc tế</a></td>
+                <td data-label="Ưu / nhược">Thành phố đẹp, trường mạnh / tỉnh bổng chưa chắc có sinh hoạt phí</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Thâm Quyến (深圳大学)</td>
+                <td class="city" data-label="Thành phố">Thâm Quyến</td>
+                <td data-label="Học bổng">Học bổng tỉnh Quảng Đông, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://status.szu.edu.cn/" target="_blank" rel="noopener">Hệ thống lưu học sinh</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://lxs.szu.edu.cn/" target="_blank" rel="noopener">Học viện giao lưu quốc tế</a></td>
+                <td data-label="Ưu / nhược">Thực tập vùng Vịnh / một số suất cho SV cũ</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Khoa học kỹ thuật Hoa Trung (华中科技大学)</td>
+                <td class="city" data-label="Thành phố">Vũ Hán</td>
+                <td data-label="Học bổng">CSC, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="http://admission.hust.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://sie.hust.edu.cn/" target="_blank" rel="noopener">Viện Giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Kỹ thuật mạnh, tỷ lệ chất–giá tốt / CSC cạnh tranh cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Chiết Giang (浙江大学)</td>
+                <td class="city" data-label="Thành phố">Hàng Châu</td>
+                <td data-label="Học bổng">CSC B, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://intlstudent.zju.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://iczu.zju.edu.cn/admissions/" target="_blank" rel="noopener">Cổng tuyển sinh quốc tế</a></td>
+                <td data-label="Ưu / nhược">Đẳng cấp cao / cực cạnh tranh</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Giao thông Thượng Hải (上海交通大学)</td>
+                <td class="city" data-label="Thành phố">Thượng Hải</td>
+                <td data-label="Học bổng">CSC B, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://apply.sjtu.edu.cn/" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://isc.sjtu.edu.cn/" target="_blank" rel="noopener">Văn phòng lưu học sinh</a></td>
+                <td data-label="Ưu / nhược">Kỹ thuật/kinh tế mạnh / chi phí cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Phúc Đán (复旦大学)</td>
+                <td class="city" data-label="Thành phố">Thượng Hải</td>
+                <td data-label="Học bổng">CSC B, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://iso.fudan.edu.cn/" target="_blank" rel="noopener">Cổng lưu học sinh</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://iso.fudan.edu.cn/" target="_blank" rel="noopener">iso.fudan.edu.cn</a></td>
+                <td data-label="Ưu / nhược">XHNV &amp; tổng hợp mạnh / cực cạnh tranh</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Thanh Hoa (清华大学)</td>
+                <td class="city" data-label="Thành phố">Bắc Kinh</td>
+                <td data-label="Học bổng">CSC B, học bổng trường</td>
+                <td data-label="Đăng ký">
+                  <a class="apply-link" href="https://apply.join-tsinghua.edu.cn/international/res/SpecialWsbm/index.html" target="_blank" rel="noopener">Đại học</a>
+                  ·
+                  <a class="apply-link" href="https://yzbm.tsinghua.edu.cn/intlLogin" target="_blank" rel="noopener">Sau ĐH</a>
+                </td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://yz.tsinghua.edu.cn/" target="_blank" rel="noopener">Cổng tuyển sinh sau ĐH</a></td>
+                <td data-label="Ưu / nhược">Giá trị bằng cấp cao nhất / khó nhất</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Bắc Kinh (北京大学)</td>
+                <td class="city" data-label="Thành phố">Bắc Kinh</td>
+                <td data-label="Học bổng">CSC B, học bổng trường</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="http://www.studyatpku.com/" target="_blank" rel="noopener">Hệ thống quốc tế</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://www.isd.pku.edu.cn/" target="_blank" rel="noopener">Văn phòng lưu học sinh</a></td>
+                <td data-label="Ưu / nhược">Thương hiệu số 1 / cạnh tranh cực cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Ngôn ngữ Bắc Kinh (北京语言大学)</td>
+                <td class="city" data-label="Thành phố">Bắc Kinh</td>
+                <td data-label="Học bổng">CSC, học bổng tiếng Trung</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://admission.blcu.edu.cn/" target="_blank" rel="noopener">Hệ thống tuyển sinh</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://admission.blcu.edu.cn/" target="_blank" rel="noopener">Cổng tuyển sinh</a></td>
+                <td data-label="Ưu / nhược">Đào tạo tiếng Trung mạnh / chi phí Bắc Kinh cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Sư phạm Hoa Đông (华东师范大学)</td>
+                <td class="city" data-label="Thành phố">Thượng Hải</td>
+                <td data-label="Học bổng">CSC, học bổng tiếng Trung</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://lxs.ecnu.edu.cn/" target="_blank" rel="noopener">Tuyển sinh lưu học sinh</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://lxs.ecnu.edu.cn/" target="_blank" rel="noopener">Trung tâm giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Sư phạm/tiếng Trung mạnh / chi phí Thượng Hải cao</td>
+              </tr>
+              <tr>
+                <td class="uni-name" data-label="Trường">Đại học Liêu Ninh (辽宁大学)</td>
+                <td class="city" data-label="Thành phố">Thẩm Dương</td>
+                <td data-label="Học bổng">Học bổng tỉnh Liêu Ninh</td>
+                <td data-label="Đăng ký"><a class="apply-link" href="https://lnu.17gz.org/member/login.do" target="_blank" rel="noopener">Hệ thống nộp hồ sơ</a></td>
+                <td data-label="Tuyển sinh"><a class="apply-link" href="https://ie.lnu.edu.cn/" target="_blank" rel="noopener">Viện Giáo dục quốc tế</a></td>
+                <td data-label="Ưu / nhược">Phương án dự phòng tốt / cửa sổ ngắn, khí hậu lạnh</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="margin-top:12px;">
+          Cổng chung:
+          <a class="apply-link" href="https://www.campuschina.org" target="_blank" rel="noopener">Campus China</a>
+          ·
+          <a class="apply-link" href="https://studyinchina.csc.edu.cn" target="_blank" rel="noopener">Hệ thống CSC</a>
+          ·
+          <a class="apply-link" href="https://www.csca.cn" target="_blank" rel="noopener">Thi CSCA</a>
+          ·
+          <a class="apply-link" href="https://vn.china-embassy.gov.cn/chn/yhwl123/202510/t20251030_11744221.htm" target="_blank" rel="noopener">Hướng dẫn ĐSQ</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" id="timeline">
+      <div class="card span-8">
+        <h2>5. Lịch trình gợi ý 2026/2027</h2>
+        <div class="table-wrap no-max">
+          <table>
+            <thead>
+              <tr><th>Thời gian</th><th>Việc cần làm</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Thời gian">09/2025 – 11/2025</td><td data-label="Việc cần làm">Chọn bậc (ĐH/ThS/TS) và 3–5 trường; ôn HSK/IELTS; ĐH tìm hiểu CSCA</td></tr>
+              <tr><td data-label="Thời gian">12/2025 – 01/2026</td><td data-label="Việc cần làm">Thi CSCA (ĐH); liên hệ giáo viên hướng dẫn / xin pre-admission; công chứng dịch thuật</td></tr>
+              <tr><td data-label="Thời gian">01/2026</td><td data-label="Việc cần làm">Theo dõi công văn học bổng hiệp định MOET</td></tr>
+              <tr><td data-label="Thời gian">02/2026</td><td data-label="Việc cần làm">Nộp CSC loại A qua ĐSQ (tham khảo 10/02 &amp; 15/02)</td></tr>
+              <tr><td data-label="Thời gian">03/2026 – 05/2026</td><td data-label="Việc cần làm">Cao điểm CSC B / Silk Road / ASEAN; nộp song song nhiều trường</td></tr>
+              <tr><td data-label="Thời gian">06/2026 – 08/2026</td><td data-label="Việc cần làm">Chờ kết quả &amp; JW201/202; xin visa X1</td></tr>
+              <tr><td data-label="Thời gian">08/2026 – 09/2026</td><td data-label="Việc cần làm">Nhập cảnh, nhập học; đổi giấy cư trú trong 30 ngày</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card span-4">
+        <h2>Hồ sơ thường cần</h2>
+        <ul>
+          <li>Trang thông tin hộ chiếu</li>
+          <li>Bằng / giấy xác nhận đang học + bảng điểm (công chứng dịch)</li>
+          <li>Kế hoạch học tập / nghiên cứu</li>
+          <li>Thư giới thiệu (ThS/TS thường 2 thư)</li>
+          <li>HSK hoặc chứng chỉ tiếng Anh</li>
+          <li>Phiếu khám sức khỏe người nước ngoài</li>
+          <li>Lý lịch tư pháp (theo yêu cầu trường)</li>
+          <li>Pre-admission / thư nhận của giáo viên (một số dự án bắt buộc)</li>
+          <li>ĐH: bảng điểm CSCA</li>
+          <li>Bản in đơn CSC online</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid" id="proscons">
+      <div class="card span-12">
+        <h2>6. Cân bằng ưu – nhược điểm</h2>
+        <div class="proscons">
+          <div class="pros">
+            <h4>Ưu điểm</h4>
+            <ul>
+              <li><strong>Nhiều đường học bổng:</strong> CSC + Silk Road + ASEAN/tỉnh + trường.</li>
+              <li><strong>Địa lý &amp; chi phí:</strong> Quảng Tây/Vân Nam đi đường bộ được; sống rẻ hơn Âu–Mỹ.</li>
+              <li><strong>Văn hóa gần:</strong> khí hậu miền Nam, ẩm thực dễ thích nghi; nhiều người VN đã thi HSK.</li>
+              <li><strong>Việc làm:</strong> thương mại Trung–Việt, TMĐT xuyên biên giới, sản xuất cần nhân sự song ngữ.</li>
+              <li><strong>Bằng cấp:</strong> trường chính quy có thể xác nhận qua Bộ GD&amp;ĐT Việt Nam.</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Nhược điểm / rủi ro</h4>
+            <ul>
+              <li><strong>Cạnh tranh phân tầng:</strong> CSC đầy đủ + trường top rất khó.</li>
+              <li><strong>Quy định đổi mỗi năm:</strong> 2026 có CSCA; một số dự án ĐSQ chỉ hỗ trợ một phần.</li>
+              <li><strong>Kết quả không chắc chắn:</strong> phụ thuộc CSC / sở tỉnh / trường phê duyệt.</li>
+              <li><strong>Chi phí hành chính:</strong> visa, cư trú, WeChat/Alipay, mùa đông miền Bắc.</li>
+              <li><strong>Không cộng dồn:</strong> thường chỉ được giữ một suất học bổng chính phủ TQ.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="advice">
+      <div class="card span-12">
+        <h2>7. Chiến lược nên làm</h2>
+        <div class="table-wrap no-max">
+          <table>
+            <thead>
+              <tr><th>Chân dung</th><th>Chiến lược</th><th>Vì sao</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Chân dung">Học lực tốt, muốn trường top</td>
+                <td data-label="Chiến lược">CSC B (2–3 trường đỉnh) + 1 trường chắc chắn + học bổng tỉnh/trường dự phòng</td>
+                <td data-label="Vì sao">Tấn công cao nhưng vẫn kiểm soát rủi ro</td>
+              </tr>
+              <tr>
+                <td data-label="Chân dung">Đại học, ngân sách hạn chế, muốn chắc suất</td>
+                <td data-label="Chiến lược">Ưu tiên ASEAN/Silk Road Quảng Tây–Vân Nam</td>
+                <td data-label="Vì sao">Thân thiện quốc tịch VN, chi phí thấp nhất</td>
+              </tr>
+              <tr>
+                <td data-label="Chân dung">ThS/TS đã có giáo viên nhận</td>
+                <td data-label="Chiến lược">Xin pre-admission trước, rồi nộp CSC A/B</td>
+                <td data-label="Vì sao">Pre-admission rất quan trọng ở cả ĐSQ và trường</td>
+              </tr>
+              <tr>
+                <td data-label="Chân dung">Giỏi tiếng Trung, muốn dạy Hán ngữ</td>
+                <td data-label="Chiến lược">Nam Xương Silk Road, BLCU, ECNU, Jinan…</td>
+                <td data-label="Vì sao">Khớp chuyên ngành và loại học bổng</td>
+              </tr>
+              <tr>
+                <td data-label="Chân dung">Hướng kỹ thuật – việc làm</td>
+                <td data-label="Chiến lược">HUST / ZJU / SJTU tấn công + trường kỹ thuật Quảng Tây dự phòng</td>
+                <td data-label="Vì sao">Tách thương hiệu bằng cấp và cơ hội việc làm thực tế</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="margin-top:10px;">
+          Công thức ngắn: <strong>1–2 trường “đánh cao” + 1–2 trường “chắc” + 1 phương án dự phòng ASEAN/tỉnh</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" id="sources">
+      <div class="card span-12 links">
+        <h2>8. Nguồn chính thức</h2>
+        <ul>
+          <li>Campus China: <a href="https://www.campuschina.org" target="_blank" rel="noopener">https://www.campuschina.org</a></li>
+          <li>Hệ thống CSC: <a href="https://studyinchina.csc.edu.cn" target="_blank" rel="noopener">https://studyinchina.csc.edu.cn</a></li>
+          <li>Hướng dẫn ĐSQ Trung Quốc tại Việt Nam 2026/2027: <a href="https://vn.china-embassy.gov.cn/chn/yhwl123/202510/t20251030_11744221.htm" target="_blank" rel="noopener">Trang thông báo</a></li>
+          <li>CSCA: <a href="https://www.csca.cn" target="_blank" rel="noopener">https://www.csca.cn</a></li>
+          <li>Danh sách trường: <a href="https://www.campuschina.org/zh/universities/index.html" target="_blank" rel="noopener">Campus China – Universities</a></li>
+        </ul>
+        <p class="muted">
+          Trang này chỉ hỗ trợ tham khảo, không phải cam kết tuyển sinh chính thức.
+          Kết quả lấy theo thông báo và giấy nhập học của năm hiện hành.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      Cập nhật: 07/09/2026 · Dành cho ứng viên Việt Nam · Bản HTML tiếng Việt · Tối ưu iPhone
+    </footer>
+  </div>
+</body>
+</html>
